@@ -19,6 +19,7 @@ app.use('/static', express.static(__dirname + '/static'))
 // 各种路由
 app.use('/', require('./router/index'))
 app.use('/files', require('./router/files'))
+app.use('/ajax', require('./router/ajax'))
 
 app.listen(port, () => {
   console.log('server is runing on port %s', port)
