@@ -1,12 +1,17 @@
 const express = require('express')
+const path = require('path')
 const router = express.Router()
 
 router.get('/', (request, response) => {
   response.send({
     author: 'suwako',
-    greet: 'hello, world!',
-    dirname: __dirname
+    description: 'A development server...'
   })
 })
+
+router.get('/public/*', (request, response) => {
+  const url = request.url.split('?')
+  response.sendFile(path.resolve('./') + url[0])
+});
 
 module.exports = router
