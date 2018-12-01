@@ -20,12 +20,11 @@ router.get('/success', (request, response) => {
 
 router.post('/success', (request, response) => {
   console.log(request.body)
-  // response.send({
-  //   state: 'ok',
-  //   data: request.body,
-  //   msg: '成功!',
-  // })
-  response.redirect('/files');
+  response.send({
+    state: 'ok',
+    data: request.body,
+    msg: '成功!',
+  })
 })
 
 module.exports = router

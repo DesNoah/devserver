@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title 羡慕死了
+  body
+    #app
+    script.
+      const app = document.getElementById('app')
+      setInterval(() => {
+        const el = document.createElement('span')
+        el.innerText = '羡慕死了'
+        app.appendChild(el)
+      }, 1000)

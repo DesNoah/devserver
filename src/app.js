@@ -27,7 +27,7 @@ app.all('*', (req, res, next) => {
 
 // 各种路由
 app.use('/', require('./router/index'))
-app.use('/files', require('./router/files'))
+app.use('/file', require('./router/file'))
 app.use('/ajax', require('./router/ajax'))
 
 app.listen(port, () => {

@@ -14,4 +14,8 @@ router.get('/public/*', (request, response) => {
   response.sendFile(path.resolve('./') + url[0])
 });
 
+router.get('/xmsl', (request, response) => {
+  response.render('xmsl', {})
+})
+
 module.exports = router

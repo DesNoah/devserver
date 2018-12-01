@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/devserver')
+mongoose.connect('mongodb://localhost:27017/devserver')
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'mongodb connect error'))

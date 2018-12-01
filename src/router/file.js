@@ -3,8 +3,10 @@ const model = require('../model/files')
 const formidable = require('formidable')
 const fs = require('fs')
 const utils = require('../utils/utils')
+const crypto = require('crypto')
 
 const router = express.Router()
+const hash = crypto.createHash('md5')
 
 router.get('/', (request, response) => {
   model.find({}, (error, result, res) => {
@@ -24,6 +26,7 @@ router.get('/add', (request, response) => {
 })
 router.post('/add', (request, response) => {
   const form = new formidable.IncomingForm()
+
   form.encoding = 'utf-8'
   form.uploadDir = 'public'
   form.keepExtensions = true
@@ -31,6 +34,8 @@ router.post('/add', (request, response) => {
 
   form.parse(request, (error, fields, files) => {
     if (error) response.send({ state: 'error', error: error })
+
+    console.log(files)
 
     let file = files.file
     let datetime = Date.now()

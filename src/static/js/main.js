@@ -18,7 +18,7 @@
   }
 
   const uploader_config = {
-    url: 'http://118.24.88.239:3000/files/add',
+    url: 'http://118.24.88.239:3000/file/add',
     flash_swf_url: '/static/js/plupload/Moxie.swf',
     silverlight_xap_url: '/static/js/plupload/Moxie.xap'
   }
@@ -29,7 +29,7 @@
 
     // make delete method
     const deleteThis = (id) => {
-      const deleteUrl = '/files/delete',
+      const deleteUrl = '/file/delete',
             fileId = id ? { id: id } : null
       if (!fileId) {
         layer.confirm(cn.delete_all, {
@@ -68,6 +68,8 @@
             refresh()
           }
         })
+      } else {
+        log('@err:', res)
       }
     })
     
