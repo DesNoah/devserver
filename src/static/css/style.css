@@ -1,0 +1,6 @@
+.search { display: table; margin: 20px; font-size: 0; }
+.search input, .search button { display: table-cell; vertical-align: middle; height: 30px; font-size: 14px; box-sizing: border-box; }
+.search button { line-height: 28px; outline: none; }
+.search button border { width: 1px; }
+
+/*# sourceMappingURL=style.css.map */

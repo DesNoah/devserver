@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "supervisor ./src/app.js"
+    "server": "supervisor ./src/app.js",
+    "sass": "sass --watch ./src/static/sass/style.sass:./src/static/css/style.css --style compact",
+    "dev": "concurrently \"npm run server\" \"npm run sass\""
   },
   "keywords": [],
   "author": "",

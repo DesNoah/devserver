@@ -18,4 +18,8 @@ router.get('/xmsl', (request, response) => {
   response.render('xmsl', {})
 })
 
+router.get('/search', (request, response) => {
+  response.render('form', {})
+})
+
 module.exports = router
